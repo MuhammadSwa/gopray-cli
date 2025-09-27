@@ -1,6 +1,6 @@
 # 🌙 GoPray CLI
 
-A modern Islamic prayer times CLI tool wit## 📋 Configuration
+A modern Islamic prayer times CLI tool
 
 ## ✨ Features
 
