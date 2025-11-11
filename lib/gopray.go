@@ -97,7 +97,9 @@ func (a *App) TimeLeftForNextPrayer() time.Duration {
 // GetNextPrayerName returns the name of the next prayer
 func (a *App) GetNextPrayerName() string {
 	nextPrayer := a.PrayerTimes.NextPrayerNow()
-	prayerNames := []string{"none", "fajr", "dhuhr", "asr", "maghrib", "isha"}
+	// Note: the underlying calc.Prayer enum includes 'sunrise' at index 2,
+	// so include it here to keep indexes aligned: 0=none,1=fajr,2=sunrise,3=dhuhr,4=asr,5=maghrib,6=isha
+	prayerNames := []string{"none", "fajr", "sunrise", "dhuhr", "asr", "maghrib", "isha"}
 
 	if nextPrayer == 0 {
 		return a.Localizer.GetPrayerName("fajr") // After Isha, next is tomorrow's Fajr
